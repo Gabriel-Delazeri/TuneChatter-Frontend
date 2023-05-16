@@ -1,0 +1,33 @@
+html,
+body {
+  height: 100%;
+}
+
+.album-card {
+  width: 170px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.album-card:hover{
+  border: 0px;
+  border: 1px solid #abdbe3
+}
+
+.nav-link {
+  color: #FFFF;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.background {
+  min-height: 100vh;
+  background-color: #1a1a1a;
+}
+
+.home-text{
+  color: #ffff;
+  margin-bottom: 50px;
+}
