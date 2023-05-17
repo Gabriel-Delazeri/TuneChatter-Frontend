@@ -1,0 +1,25 @@
+.brand-tune {
+    font-family: Roboto, sans-serif;
+    color: #ffff;
+}
+  
+.brand-chatter {
+    font-family: Roboto, sans-serif;
+    color: #abdbe3;
+}
+
+.nav-link {
+    color: #FFFF;
+}
+  
+.navbar {
+    margin-bottom: 20px;
+}
+
+.nav-link:hover {
+    color: #abdbe3;
+}
+
+.nav-link-small {
+    font-size: 15px;
+}

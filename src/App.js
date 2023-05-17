@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import musicboxdapi from "./services/musicboxdapi";
 import 'bootstrap/dist/css/bootstrap.css';
-import Navbar from "./components/navbar";
-import './App.css'
-import AlbumCard from "./components/album-card";
+import Navbar from "./components/Navbar";
+import './styles/App.css'
+import './styles/Home.css'
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import CarouselAlbums from "./components/CarouselAlbums";
+import HomeText from "./components/HomeText";
 
 function App() {
 
@@ -19,15 +23,11 @@ function App() {
     <div className="App background">
         <Navbar/>
         <div className="container">
-          <div className="row">
-            <div className="text-center home-text">
-              <h1>Track albums you've listened to.</h1>
-              <h1>Save those you want to hear.</h1>
-              <h1>Share your favorites with friends.</h1>
-            </div>
-          {
-            albums.map(album => <AlbumCard album={album}/>)
-          }
+          <div className="row albums-carousel">
+            <CarouselAlbums albums={albums} />
+          </div>
+          <div>
+            <HomeText/>
           </div>
         </div>
     </div>
