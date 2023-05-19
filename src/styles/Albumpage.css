@@ -9,3 +9,9 @@
 .album-container .top {
     margin-bottom: 60px;
 }
+
+@media (max-width: 600px) {
+    .track-header {
+        display: none;
+    }
+}

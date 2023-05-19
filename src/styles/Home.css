@@ -36,8 +36,8 @@
   padding: 10px;
   margin-bottom: 0px;
   border-radius: 5px;
-  width: 70%; /* Define a largura como 70% do elemento pai */
-  height: 50%; /* Define a altura como 70% do elemento pai */
+  width: 80%; 
+  height: 80%;
   pointer-events: none;
   display: flex;
   flex-direction: column;
