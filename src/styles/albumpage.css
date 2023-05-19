@@ -1,0 +1,11 @@
+.album-container .title {
+    font-family: Roboto, serif;
+}
+
+.album-container .subtitle {
+    font-weight: lighter;
+}
+
+.album-container .top {
+    margin-bottom: 60px;
+}

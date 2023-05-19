@@ -11,15 +11,23 @@
 .nav-link {
     color: #FFFF;
 }
-  
-.navbar {
-    margin-bottom: 20px;
-}
 
 .nav-link:hover {
     color: #abdbe3;
 }
+  
+.navbar {
+    margin-bottom: 120px;
+}
 
 .nav-link-small {
     font-size: 15px;
+}
+
+.nav-link.active-link {
+    color: #abdbe3; /* Defina a cor desejada para o link ativo */
+}
+
+.nav-link.active-link:hover {
+    color: #abdbe3;
 }
