@@ -20,7 +20,7 @@ const AlbumCard = ({ album }) => {
         onMouseLeave={handleMouseLeave}
       >
         <a href={`/album/${album.slug}`}>
-          <img className={`album-card ${isHovered ? 'hovered' : ''}`} src={album.imageUrl} alt={album.name} />
+          <img className={`album-card ${isHovered ? 'hovered' : ''}`} src={album.image_url} alt={album.name} />
           {isHovered && (
             <div className="album-name">
               <p>{album.name}</p>

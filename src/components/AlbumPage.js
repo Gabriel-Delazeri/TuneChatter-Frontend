@@ -42,6 +42,8 @@ export default function AlbumPage() {
         return artistsString;
     }
 
+    console.log(album)
+
     return (
         <div className="container album-container">
             {album.length === 0 ? (
@@ -52,13 +54,13 @@ export default function AlbumPage() {
                         <div className="row">
                             <div className="col-lg-4 col-md-6 col-sm-12">
                                 <div className="album-card-container">
-                                    <img className="album-card" src={album.imageUrl} alt={album.name} />
+                                    <img className="album-card" src={album.image_url} alt={album.name} />
                                     <AlbumRating score={3.5} />
                                 </div>
                             </div>
                             <div className="col-lg-8 col-md-6 col-sm-12">
                                 <h1 className="title">{album.name}</h1>
-                                <h5 className="subtitle"><GetYear providedDate={album.releaseDate} />, {album.artists[0].name}</h5>
+                                <h5 className="subtitle"><GetYear providedDate={album.release_date} />, {album.artists[0].name}</h5>
                             </div>
                         </div>
                     </div>
