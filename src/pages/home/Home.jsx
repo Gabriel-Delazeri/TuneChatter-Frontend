@@ -1,10 +1,12 @@
-import CarouselAlbums from "./CarouselAlbums"
+import './home.css';
 
-export default function HomeText({albums}) {
+import CarouselAlbuns from "./components/CarouselAlbuns"
+
+export default function Home() {
     return (
         <div className="container">
-            <div className="row albums-carousel">
-            <CarouselAlbums albums={albums} />
+            <div className="row">
+                <CarouselAlbuns />
             </div>
             <div>
                 <div className="text-center">
