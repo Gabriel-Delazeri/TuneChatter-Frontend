@@ -1,4 +1,4 @@
-import AlbumsPage from './AlbumsPage';
+import AlbunsPage from './AlbunsPage';
 import React, { useState } from 'react';
 import '../styles/Navbar.css';
 import HomeText from './Homepage';
@@ -40,7 +40,7 @@ const Navbar = ({ albums }) => {
       </nav>
       <Switch>
         <Route path="/" exact render={() => <HomeText albums={albums} />} />
-        <Route path="/albums" render={() => <AlbumsPage albums={albums} />} />
+        <Route path="/albums" render={() => <AlbunsPage albums={albums} />} />
         <Route path="/album/:slug" render={() => <AlbumPage />}/>
         <Route render={() => <h1>404: page not found</h1>} />
       </Switch>

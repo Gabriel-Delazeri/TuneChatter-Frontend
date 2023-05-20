@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useState, useEffect } from "react";
 import musicboxdapi from "../services/musicboxdapi";
-import '../styles/Albumpage.css';
+import '../styles/app.css';
 import AlbumRating from "./AlbumRating";
 import { FiClock } from 'react-icons/fi';
 
@@ -21,10 +21,10 @@ export default function AlbumPage() {
     }
 
     const GetMinutage = ({ durationMs }) => {
-        const minutes = Math.floor(durationMs / 60000); // Obtém os minutos arredondados
-        const seconds = Math.floor((durationMs % 60000) / 1000); // Obtém os segundos arredondados
+        const minutes = Math.floor(durationMs / 60000); 
+        const seconds = Math.floor((durationMs % 60000) / 1000);
 
-        const formattedTime = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`; // Formata o tempo como "mm:ss"
+        const formattedTime = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 
         return formattedTime;
     };
@@ -88,7 +88,7 @@ export default function AlbumPage() {
                                     <h5 className="subtitle"><GetArtistsName artists={track.artists} /></h5>
                                 </div>
                                 <div className="col-2 col-md-1">
-                                    <h6 className="subtitle"><GetMinutage durationMs={track.durationMs} /></h6>
+                                    <h6 className="subtitle"><GetMinutage durationMs={track.duration_ms} /></h6>
                                 </div>
                             </div>
                         ))}
