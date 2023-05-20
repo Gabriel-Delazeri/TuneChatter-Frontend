@@ -1,0 +1,12 @@
+.footer {
+    margin-top: 100px;
+}
+
+.contact-link {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    color: #9dacb8;
+}

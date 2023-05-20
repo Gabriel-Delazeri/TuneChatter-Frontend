@@ -6,8 +6,7 @@ import './styles/App.css'
 import './styles/Home.css'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import CarouselAlbums from "./components/CarouselAlbums";
-import HomeText from "./components/HomeText";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -21,15 +20,8 @@ function App() {
 
   return (
     <div className="App background">
-        <Navbar/>
-        <div className="container">
-          <div className="row albums-carousel">
-            <CarouselAlbums albums={albums} />
-          </div>
-          <div>
-            <HomeText/>
-          </div>
-        </div>
+        <Navbar albums={albums}/>
+        <Footer></Footer>
     </div>
   );
 }

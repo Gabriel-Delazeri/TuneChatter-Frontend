@@ -1,31 +1,52 @@
-import React from 'react';
-import '../styles/Navbar.css'
+import AlbumsPage from './AlbumsPage';
+import React, { useState } from 'react';
+import '../styles/Navbar.css';
+import HomeText from './Homepage';
+import { BrowserRouter as Router, Link, Route, Switch, NavLink } from 'react-router-dom';
+import AlbumPage from './AlbumPage';
 
-const Navbar = () => {
+const Navbar = ({ albums }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <nav class="navbar navbar-expand-lg bg-transparent">
-      <div class="container">
-        <a class="navbar-brand" href="#"><span className='brand-tune'>TUNE</span><span className='brand-chatter'>CHATTER</span></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <Router>
+      <nav className="navbar navbar-expand-lg bg-transparent">
+        <div className="container">
+          <Link className="navbar-brand" to="/">
+            <span className="brand-tune">TUNE</span>
+            <span className="brand-chatter">CHATTER</span>
+          </Link>
+          <button
+            className={`navbar-toggler ${isMenuOpen ? 'collapsed' : ''}`}
+            type="button"
+            onClick={toggleMenu}
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link nav-link-small" href="#">SIGN IN</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-link-small" href="#">CREATE ACCOUNT</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-link-small" href="#">ALBUMS</a>
-            </li>
-          </ul>
+          <div className={`collapse navbar-collapse ${isMenuOpen ? 'show' : ''}`}>
+            <ul className="navbar-nav mr-auto">
+              <li className="nav-item">
+                <NavLink className="nav-link nav-link-small" to="/albums" activeClassName="active-link" onClick={toggleMenu}>ALBUMS</NavLink>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+      <Switch>
+        <Route path="/" exact render={() => <HomeText albums={albums} />} />
+        <Route path="/albums" render={() => <AlbumsPage albums={albums} />} />
+        <Route path="/album/:slug" render={() => <AlbumPage />}/>
+        <Route render={() => <h1>404: page not found</h1>} />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default Navbar;
+

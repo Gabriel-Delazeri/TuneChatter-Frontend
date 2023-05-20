@@ -1,16 +1,56 @@
-.album-card {
+.album-card-container {
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+}  
+
+.album-card-container .album-card {
     width: 100%;
     margin-bottom: 20px;
     border-radius: 5px;
-  }
-  
-.home-text{
-    margin-top: 50px;
-    color: #ffff;
-    margin-bottom: 50px;
-    font-family: Roboto, sans-serif;
+    transition: filter 0.3s ease;
 }
-  
-.albums-carousel {
-    margin-top: 100px;
+
+.album-card-carousel-container .album-card {
+    width: 100%;
+    margin-bottom: 100px;
+    border-radius: 5px;
+    transition: filter 0.3s ease;
+}
+
+.album-card-container .album-card.hovered {
+  filter: blur(5px);
+}
+
+.album-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  margin-bottom: 0px;
+  border-radius: 5px;
+  width: 80%; 
+  height: 80%;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.album-rating-container {
+    margin-top: auto;
+    font-size: 24px;
+    color: white;
+}
+
+.home-text {
+  font-weight: lighter;
 }

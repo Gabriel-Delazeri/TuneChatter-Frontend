@@ -16,7 +16,9 @@ const CarouselAlbums = ({albums}) => {
         <Slider {...settings}>
             {albums.map(album => (
                 <div key={album.id}>
-                    <AlbumCard album={album} />
+                    <div className="album-card-carousel-container">
+                        <AlbumCard album={album} /> 
+                    </div>
                 </div>
             ))}
         </Slider>
