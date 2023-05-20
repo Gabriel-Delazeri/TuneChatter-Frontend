@@ -1,4 +1,4 @@
-import AlbumCard from "../../components/AlbumCard"
+import AlbumCard from "./components/AlbumCard"
 import './album.css';
 import { useState } from "react";
 import TuneChatterApi from "../../services/TuneChatterApi";

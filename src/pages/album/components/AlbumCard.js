@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import AlbumRating from './AlbumRating';
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 
 const AlbumCard = ({ album }) => {
     const [isHovered, setIsHovered] = useState(false);

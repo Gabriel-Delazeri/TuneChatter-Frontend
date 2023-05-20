@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useState, useEffect } from "react";
 import TuneChatterApi from "../../services/TuneChatterApi";
-import AlbumRating from "../../components/AlbumRating";
+import AlbumRating from "./components/AlbumRating";
 import { FiClock } from "react-icons/fi";
 import TrackUtil from "../../utils/TrackUtil";
 import ArtistUtil from "../../utils/ArtistUtil";
