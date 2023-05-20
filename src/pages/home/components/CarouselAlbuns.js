@@ -1,8 +1,11 @@
 import React from "react";
 import Slider from 'react-slick'
-import AlbumCard from "./AlbumCard";
+import { useState, useEffect } from "react";
+import TuneChatterApi from "../../../services/TuneChatterApi";
+import AlbumCover from "./AlbumCover";
 
-const CarouselAlbums = ({albums}) => {
+const CarouselAlbuns = () => {
+
     const settings = {
         infinite: true,
         speed: 500,
@@ -12,12 +15,20 @@ const CarouselAlbums = ({albums}) => {
         autoplaySpeed: 2000
     };
 
+    const [albums, setAlbums] = useState([]);
+
+    useEffect(() => {
+      TuneChatterApi
+      .get("/albums")
+      .then((response) => setAlbums(response.data))
+    }, []);
+
     return (
         <Slider {...settings}>
             {albums.map(album => (
                 <div key={album.id}>
                     <div className="album-card-carousel-container">
-                        <AlbumCard album={album} /> 
+                        <AlbumCover album={album}/>
                     </div>
                 </div>
             ))}
@@ -25,4 +36,4 @@ const CarouselAlbums = ({albums}) => {
     );
 };
 
-export default CarouselAlbums;
+export default CarouselAlbuns;

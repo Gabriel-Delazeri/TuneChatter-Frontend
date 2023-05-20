@@ -1,27 +1,14 @@
-import { useEffect, useState } from "react";
-import musicboxdapi from "./services/musicboxdapi";
 import 'bootstrap/dist/css/bootstrap.css';
-import Navbar from "./components/Navbar";
-import './styles/App.css'
-import './styles/Home.css'
+import './App.css'
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Footer from "./components/Footer";
+import RoutesApp from "./routes/routes";
 
 function App() {
 
-  const [albums, setAlbums] = useState([]);
-
-  useEffect(() => {
-    musicboxdapi
-    .get("/albums")
-    .then((response) => setAlbums(response.data))
-  }, []);
-
   return (
     <div className="App background">
-        <Navbar albums={albums}/>
-        <Footer></Footer>
+        <RoutesApp />
     </div>
   );
 }
